@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/paper@0.11.5/dist/paper-full.min.js"></script>
+</head>
+
+<body>
+  <canvas id="splatterPaint"></canvas>
+  <div id="text-container">
+    Splatter Paint! Try, move your mouse. There is also a hidden text! Find it!
+  </div>
+  <div id="hidden-text">you found me</div>
+  <script>
+    function positionText() {
+      const hiddenText = document.getElementById("hidden-text");
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+
+      hiddenText.style.left = `${Math.random() * (windowWidth - hiddenText.offsetWidth)}px`;
+      hiddenText.style.top = `${Math.random() * (windowHeight - hiddenText.offsetHeight)}px`;
+    }
+
+    positionText(); // Call the function to position the text initially
+  </script>
+  <script
+    type="text/paperscript"
+    canvas="splatterPaint"
+    src="/script.js"
+  ></script>
+</body>
+
+</html>
